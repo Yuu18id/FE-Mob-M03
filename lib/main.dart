@@ -102,15 +102,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ])),
-                    Container(
-                      width: 300,
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Tambah Keterangan'),
-                      ),
-                    ),
                   ],
+                ),
+              ),
+              Container(
+                width: 355,
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Tambah Keterangan'),
                 ),
               ),
               Container(

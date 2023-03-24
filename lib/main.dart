@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
       ),
       debugShowCheckedModeBanner: false,
-      home: Center(child: const MyHomePage(title: 'Todos')),
+      home: const Center(child: MyHomePage(title: 'Todos')),
     );
   }
 }
@@ -67,19 +67,22 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Container(
           width: 400,
-          margin: EdgeInsets.only(top: 30),
+          margin: const EdgeInsets.only(top: 30),
           child: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.list_alt),
-                  Text(
-                    'Kegiatan',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
+                  RichText(
+                      text: const TextSpan(children: [
+                    WidgetSpan(child: Icon(Icons.list_alt)),
+                    TextSpan(
+                      text: 'Kegiatan',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ])),
                   Container(
-                    width: 200,
+                    width: 230,
                     child: TextFormField(
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(),
@@ -91,11 +94,14 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 child: Row(
                   children: [
-                    const Icon(Icons.sort),
-                    Text(
-                      'Keterangan',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
+                    RichText(
+                        text: const TextSpan(children: [
+                      WidgetSpan(child: Icon(Icons.sort)),
+                      TextSpan(
+                        text: 'Keterangan',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ])),
                     Container(
                       width: 300,
                       child: TextFormField(
@@ -110,13 +116,13 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 child: Row(
                   children: [
-                    Icon(Icons.calendar_month),
-                    Text(
+                    const Icon(Icons.calendar_month),
+                    const Text(
                       'Tanggal Mulai',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    Icon(Icons.calendar_month_outlined),
-                    Text(
+                    const Icon(Icons.calendar_month_outlined),
+                    const Text(
                       'Tanggal Selesai',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
@@ -152,13 +158,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(
                         width: 180,
                         child: OutlinedButton(
-                          child: Text('Batal'),
+                          child: const Text('Batal'),
                           onPressed: () {},
                         )),
                     Container(
                         width: 180,
                         child: ElevatedButton(
-                          child: Text('Simpan'),
+                          child: const Text('Simpan'),
                           onPressed: () {},
                         )),
                   ],

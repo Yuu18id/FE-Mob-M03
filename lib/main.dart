@@ -112,35 +112,47 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Container(
+                padding: EdgeInsets.only(left: 20.0),
                 width: 355,
                 child: TextFormField(
                   decoration: const InputDecoration(
+                      contentPadding: EdgeInsets.all(40),
                       border: OutlineInputBorder(),
                       labelText: 'Tambah Keterangan'),
                 ),
               ),
               Container(
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Icon(Icons.calendar_month),
-                    const Text(
-                      'Tanggal Mulai',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 55),
+                      child: RichText(
+                          text: const TextSpan(children: [
+                        WidgetSpan(child: Icon(Icons.calendar_month)),
+                        TextSpan(
+                          text: 'Tanggal Mulai',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ])),
                     ),
-                    const Icon(Icons.calendar_month_outlined),
-                    const Text(
-                      'Tanggal Selesai',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
+                    RichText(
+                        text: const TextSpan(children: [
+                      WidgetSpan(child: Icon(Icons.calendar_month_outlined)),
+                      TextSpan(
+                        text: 'Tanggal Selesai',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ])),
                   ],
                 ),
               ),
               Container(
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
-                      width: 150,
+                      width: 120,
                       child: TextFormField(
                         decoration: const InputDecoration(
                             border: UnderlineInputBorder(),
@@ -148,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     Container(
-                      width: 150,
+                      width: 120,
                       child: TextFormField(
                         decoration: const InputDecoration(
                             border: UnderlineInputBorder(),
@@ -168,6 +180,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: const Text('Batal'),
                           onPressed: () {},
                         )),
+                    Padding(padding: EdgeInsets.all(5)),
                     Container(
                         width: 180,
                         child: ElevatedButton(

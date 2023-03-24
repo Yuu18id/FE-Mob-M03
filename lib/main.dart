@@ -66,43 +66,49 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
-          width: 400,
-          margin: const EdgeInsets.only(top: 30),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  RichText(
-                      text: const TextSpan(children: [
-                    WidgetSpan(child: Icon(Icons.list_alt)),
-                    TextSpan(
-                      text: 'Kegiatan',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ])),
-                  Container(
-                    width: 230,
-                    child: TextFormField(
-                      decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: 'Judul Kegiatan'),
-                    ),
-                  ),
-                ],
-              ),
-              Container(
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     RichText(
                         text: const TextSpan(children: [
-                      WidgetSpan(child: Icon(Icons.sort)),
+                      WidgetSpan(child: Icon(Icons.list_alt)),
                       TextSpan(
-                        text: 'Keterangan',
+                        text: 'Kegiatan',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ])),
+                    Container(
+                      width: 230,
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Judul Kegiatan'),
+                      ),
+                    ),
                   ],
+                ),
+              ),
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Row(
+                    children: [
+                      RichText(
+                          text: const TextSpan(children: [
+                        WidgetSpan(child: Icon(Icons.sort)),
+                        TextSpan(
+                          text: 'Keterangan',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ])),
+                    ],
+                  ),
                 ),
               ),
               Container(
@@ -115,6 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Container(
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Icon(Icons.calendar_month),
                     const Text(
